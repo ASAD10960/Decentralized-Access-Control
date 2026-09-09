@@ -59,10 +59,16 @@ An enterprise-grade, real-world implementation of the **8th Semester Capstone En
 
 ---
 
-## 3. Quick Start Guide
+## 3. Quick Start Guide (Ready for Anyone to Use)
 
-### Start All Services with 1-Click:
-Double click `start_all.bat` in the project root.
+### For Fresh Computers / Classmates / Evaluators:
+1. **First-Time Setup (Automated)**:
+   - Double-click [`setup_and_install.bat`](file:///c:/Users/nabee/Downloads/asad%20bhai/setup_and_install.bat).
+   - This automatically checks for Python & Node.js (and installs them if missing), configures the Python virtual environment, compiles the Solidity contracts, applies database migrations, seeds the database, and installs all Next.js dependencies.
+
+2. **Run Everything**:
+   - Double-click [`start_all.bat`](file:///c:/Users/nabee/Downloads/asad%20bhai/start_all.bat).
+   - Both the Django REST API (`http://127.0.0.1:8000`) and the Next.js Web App (`http://localhost:3000`) will launch automatically in their own terminal windows.
 
 ### Or Run Manually:
 
