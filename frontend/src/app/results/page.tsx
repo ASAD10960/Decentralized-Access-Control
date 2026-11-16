@@ -34,7 +34,7 @@ import {
 } from "lucide-react";
 
 export default function ResultsAndOutcomesPage() {
-  const [activeTab, setActiveTab] = useState<"benchmarks" | "live-test" | "security-outcomes" | "paper-comparison" | "paper-pdf">("benchmarks");
+  const [activeTab, setActiveTab] = useState<"plain-english" | "benchmarks" | "live-test" | "security-outcomes" | "paper-comparison" | "paper-pdf">("plain-english");
 
   // Live Benchmark Simulator State
   const [testFileSizeMB, setTestFileSizeMB] = useState<number>(5); // 0.5, 5, 25, 100
@@ -202,11 +202,12 @@ export default function ResultsAndOutcomesPage() {
       {/* Navigation Tabs */}
       <div className="flex flex-wrap items-center gap-2 border-b border-cyber-border pb-3">
         {[
-          { id: "benchmarks", label: "1. Experimental Benchmarks", icon: BarChart3 },
-          { id: "live-test", label: "2. Live Benchmark Tester", icon: Play },
-          { id: "security-outcomes", label: "3. Security & Clinical Outcomes", icon: ShieldCheck },
-          { id: "paper-comparison", label: "4. State-of-the-Art Comparison", icon: Scale },
-          { id: "paper-pdf", label: "5. View Research Paper PDF", icon: FileText },
+          { id: "plain-english", label: "🌟 Results in Simple Words (Start Here!)", icon: Sparkles },
+          { id: "benchmarks", label: "2. Technical Benchmarks & Numbers", icon: BarChart3 },
+          { id: "live-test", label: "3. Live Benchmark Calculator", icon: Play },
+          { id: "security-outcomes", label: "4. Security & Threat Outcomes", icon: ShieldCheck },
+          { id: "paper-comparison", label: "5. Research Paper Comparison", icon: Scale },
+          { id: "paper-pdf", label: "6. Original Research Paper PDF", icon: FileText },
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -226,6 +227,143 @@ export default function ResultsAndOutcomesPage() {
           );
         })}
       </div>
+
+      {/* ========================================================================= */}
+      {/* TAB 0: RESULTS EXPLAINED IN SIMPLE PLAIN ENGLISH (SUPER EASY TO UNDERSTAND) */}
+      {/* ========================================================================= */}
+      {activeTab === "plain-english" && (
+        <div className="space-y-8 animate-fadeIn">
+          {/* Main takeaway card */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-teal-500/50 shadow-glow-teal space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 font-bold text-xs font-mono uppercase">
+                The Core Result in One Simple Sentence
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+              "We proved that a patient can lock their medical scan with math so{" "}
+              <span className="text-teal-300 underline decoration-teal-500">only the right doctor</span> can open it in{" "}
+              <span className="text-cyan-300">0.78 seconds</span>, while{" "}
+              <span className="text-rose-400 underline decoration-rose-500">wrong doctors are blocked 100% of the time</span>, and access can be{" "}
+              <span className="text-amber-300">cancelled instantly in 0.34 seconds</span>."
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 pt-1 leading-relaxed">
+              If an examiner asks <em>"What did your project achieve?"</em> — memorize and tell them the 4 real-world test results below.
+            </p>
+          </div>
+
+          {/* The 4 Real Tests We Ran */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <Award className="w-5 h-5 text-teal-400" /> The 4 Real Tests We Ran & What Happened
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Test 1 */}
+              <div className="p-6 rounded-3xl bg-slate-900/80 border border-emerald-500/40 space-y-3 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                    TEST 1: AUTHORIZED DOCTOR
+                  </span>
+                  <span className="text-xl font-extrabold text-emerald-400 font-mono">0.78 Seconds</span>
+                </div>
+                <h4 className="text-base font-bold text-white">Can the right doctor open the file fast?</h4>
+                <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                  <p>
+                    <strong>What we did:</strong> We uploaded a 100 MB Cardiac MRI and set the rule: <em>"Must be a Cardiologist"</em>. We tested Dr. Sarah (Cardiologist).
+                  </p>
+                  <p className="text-emerald-300 font-medium bg-emerald-950/40 p-2.5 rounded-xl border border-emerald-800/40">
+                    <strong>Result:</strong> Access granted! Her cryptographic key unlocked the file in <strong>0.78 seconds</strong>. No waiting, no delay.
+                  </p>
+                </div>
+              </div>
+
+              {/* Test 2 */}
+              <div className="p-6 rounded-3xl bg-slate-900/80 border border-rose-500/40 space-y-3 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-rose-950 text-rose-300 border border-rose-800 font-bold">
+                    TEST 2: UNAUTHORIZED SNOOPING
+                  </span>
+                  <span className="text-xl font-extrabold text-rose-400 font-mono">100% Blocked</span>
+                </div>
+                <h4 className="text-base font-bold text-white">Does a doctor with the wrong department get blocked?</h4>
+                <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                  <p>
+                    <strong>What we did:</strong> Dr. Marcus (Dermatologist) tried to view Alice's Heart Report. We also ran 500 automated hacking attempts.
+                  </p>
+                  <p className="text-rose-300 font-medium bg-rose-950/40 p-2.5 rounded-xl border border-rose-800/40">
+                    <strong>Result:</strong> Blocked in <strong>0.12 seconds</strong>! The math rejected decryption, and the attempt was saved to blockchain as an audit alert.
+                  </p>
+                </div>
+              </div>
+
+              {/* Test 3 */}
+              <div className="p-6 rounded-3xl bg-slate-900/80 border border-amber-500/40 space-y-3 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-amber-950 text-amber-300 border border-amber-800 font-bold">
+                    TEST 3: EMERGENCY (BREAK-GLASS)
+                  </span>
+                  <span className="text-xl font-extrabold text-amber-400 font-mono">0.85s + 100% Audited</span>
+                </div>
+                <h4 className="text-base font-bold text-white">What happens in a life-or-death ER crisis?</h4>
+                <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                  <p>
+                    <strong>What we did:</strong> Simulated Alice arriving unconscious in the ER. An ER trauma surgeon used the Break-Glass emergency bypass.
+                  </p>
+                  <p className="text-amber-300 font-medium bg-amber-950/40 p-2.5 rounded-xl border border-amber-800/40">
+                    <strong>Result:</strong> Report unlocked immediately to save her life, BUT the doctor's name, wallet, and emergency reason were locked forever on Ethereum.
+                  </p>
+                </div>
+              </div>
+
+              {/* Test 4 */}
+              <div className="p-6 rounded-3xl bg-slate-900/80 border border-cyan-500/40 space-y-3 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-cyan-950 text-cyan-300 border border-cyan-800 font-bold">
+                    TEST 4: PATIENT REVOCATION
+                  </span>
+                  <span className="text-xl font-extrabold text-cyan-400 font-mono">0.34 Seconds</span>
+                </div>
+                <h4 className="text-base font-bold text-white">Can the patient kick out a doctor instantly?</h4>
+                <div className="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+                  <p>
+                    <strong>What we did:</strong> Alice clicked <em>"Revoke Access"</em> on her portal to remove a doctor after treatment ended.
+                  </p>
+                  <p className="text-cyan-300 font-medium bg-cyan-950/40 p-2.5 rounded-xl border border-cyan-800/40">
+                    <strong>Result:</strong> The smart contract locked out the doctor in <strong>0.34 seconds</strong>. In older systems, this takes 5 minutes of re-encrypting files!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Simple 3-Number Cheat Sheet for Viva */}
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-cyber-border space-y-4">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <Zap className="w-5 h-5 text-amber-400" /> The 3 Golden Numbers to Memorize for Your Viva
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+                <span className="text-xs text-slate-400 font-medium">1. Decryption Time</span>
+                <div className="text-3xl font-extrabold text-teal-400 font-mono">0.78s</div>
+                <p className="text-xs text-slate-300">Fast enough for real-time hospital use. 60% faster than legacy systems.</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+                <span className="text-xs text-slate-400 font-medium">2. Revocation Time</span>
+                <div className="text-3xl font-extrabold text-cyan-400 font-mono">0.34s</div>
+                <p className="text-xs text-slate-300">Less than half a second! Beats MedRec (2.0s) and FHIRChain (1.5s).</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1">
+                <span className="text-xs text-slate-400 font-medium">3. Security Accuracy</span>
+                <div className="text-3xl font-extrabold text-emerald-400 font-mono">100%</div>
+                <p className="text-xs text-slate-300">Zero false acceptances. Collusion between bad doctors mathematically fails.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ========================================================================= */}
       {/* TAB 1: EXPERIMENTAL BENCHMARKS */}
