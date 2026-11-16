@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen, Compass, BarChart3 } from "lucide-react";
+import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen, Compass, BarChart3, HelpCircle } from "lucide-react";
 import { getSigner } from "@/lib/contracts";
 
 export default function Navbar() {
@@ -54,6 +54,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Overview", icon: Activity },
+    { href: "/about", label: "About Project", icon: HelpCircle },
     { href: "/why-securechain", label: "Why SecureChain?", icon: Compass },
     { href: "/results", label: "Results & Outcomes", icon: BarChart3 },
     { href: "/patient", label: "Patient Portal", icon: User },
