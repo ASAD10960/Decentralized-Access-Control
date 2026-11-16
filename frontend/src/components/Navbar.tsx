@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen } from "lucide-react";
 import { getSigner } from "@/lib/contracts";
 
 export default function Navbar() {
@@ -57,6 +57,8 @@ export default function Navbar() {
     { href: "/patient", label: "Patient Portal", icon: User },
     { href: "/doctor", label: "Doctor Portal", icon: Stethoscope },
     { href: "/admin", label: "Hospital Admin", icon: Building2 },
+    { href: "/viva-defense", label: "Viva Defense", icon: GraduationCap },
+    { href: "/keywords", label: "Keywords Guide", icon: BookOpen },
   ];
 
   return (
