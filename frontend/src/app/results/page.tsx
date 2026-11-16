@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import {
   BarChart3,
@@ -35,6 +35,16 @@ import {
 
 export default function ResultsAndOutcomesPage() {
   const [activeTab, setActiveTab] = useState<"plain-english" | "benchmarks" | "live-test" | "security-outcomes" | "paper-comparison" | "paper-pdf">("plain-english");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get("tab");
+      if (tabParam === "live-test" || tabParam === "simulator" || tabParam === "benchmarks") {
+        setActiveTab(tabParam === "benchmarks" ? "benchmarks" : "live-test");
+      }
+    }
+  }, []);
 
   // Live Benchmark Simulator State
   const [testFileSizeMB, setTestFileSizeMB] = useState<number>(5); // 0.5, 5, 25, 100
@@ -250,6 +260,24 @@ export default function ResultsAndOutcomesPage() {
             <p className="text-xs sm:text-sm text-slate-300 pt-1 leading-relaxed">
               If an examiner asks <em>"What did your project achieve?"</em> — memorize and tell them the 4 real-world test results below.
             </p>
+          </div>
+
+          {/* Quick Launch Simulator Callout */}
+          <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-teal-950/40 border border-teal-500/40 shadow-glow-teal">
+            <div className="space-y-0.5">
+              <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                <Play className="w-4 h-4 text-teal-400 fill-current" /> Live Benchmark Performance Simulator
+              </h4>
+              <p className="text-xs text-slate-300">
+                Pick file sizes (500KB to 100MB) and policy depth to run live tests and calculate milliseconds in real time.
+              </p>
+            </div>
+            <button
+              onClick={() => setActiveTab("live-test")}
+              className="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-1.5 transition-all hover:scale-105 flex-shrink-0"
+            >
+              <Play className="w-3.5 h-3.5 fill-current" /> Launch Live Benchmark Simulator
+            </button>
           </div>
 
           {/* The 4 Real Tests We Ran */}
