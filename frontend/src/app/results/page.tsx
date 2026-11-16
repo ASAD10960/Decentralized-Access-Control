@@ -28,11 +28,13 @@ import {
   Percent,
   Compass,
   GraduationCap,
-  BookOpen
+  BookOpen,
+  ExternalLink,
+  Download
 } from "lucide-react";
 
 export default function ResultsAndOutcomesPage() {
-  const [activeTab, setActiveTab] = useState<"benchmarks" | "live-test" | "security-outcomes" | "paper-comparison">("benchmarks");
+  const [activeTab, setActiveTab] = useState<"benchmarks" | "live-test" | "security-outcomes" | "paper-comparison" | "paper-pdf">("benchmarks");
 
   // Live Benchmark Simulator State
   const [testFileSizeMB, setTestFileSizeMB] = useState<number>(5); // 0.5, 5, 25, 100
@@ -123,9 +125,17 @@ export default function ResultsAndOutcomesPage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="/research-paper.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
+            >
+              <FileText className="w-4 h-4" /> View Original Research Paper PDF <ExternalLink className="w-3.5 h-3.5" />
+            </a>
             <Link
               href="/why-securechain"
-              className="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
+              className="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-300 font-semibold text-xs flex items-center gap-2 transition-all hover:scale-105"
             >
               <Compass className="w-4 h-4" /> Why SecureChain Overview
             </Link>
@@ -196,6 +206,7 @@ export default function ResultsAndOutcomesPage() {
           { id: "live-test", label: "2. Live Benchmark Tester", icon: Play },
           { id: "security-outcomes", label: "3. Security & Clinical Outcomes", icon: ShieldCheck },
           { id: "paper-comparison", label: "4. State-of-the-Art Comparison", icon: Scale },
+          { id: "paper-pdf", label: "5. View Research Paper PDF", icon: FileText },
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -622,6 +633,53 @@ export default function ResultsAndOutcomesPage() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* TAB 5: ORIGINAL RESEARCH PAPER PDF VIEWER */}
+      {/* ========================================================================= */}
+      {activeTab === "paper-pdf" && (
+        <div className="space-y-6 animate-fadeIn">
+          <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-cyber-border space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-teal-400" /> Original Research Paper PDF Viewer
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                  <em>"Decentralized Access Control for Medical Reports Using Smart Contracts and Attribute-Based Encryption"</em>
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href="/research-paper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-teal-300 text-xs font-semibold flex items-center gap-1.5 transition-all hover:scale-105"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" /> Open Fullscreen
+                </a>
+                <a
+                  href="/research-paper.pdf"
+                  download="research paper 8th sem.pdf"
+                  className="px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold shadow-glow-teal flex items-center gap-1.5 transition-all hover:scale-105"
+                >
+                  <Download className="w-3.5 h-3.5" /> Download PDF
+                </a>
+              </div>
+            </div>
+
+            {/* Embedded IFrame PDF Viewer */}
+            <div className="rounded-2xl border border-cyber-border overflow-hidden bg-slate-950 shadow-2xl">
+              <iframe
+                src="/research-paper.pdf#toolbar=1"
+                title="Research Paper PDF"
+                className="w-full h-[800px] border-none"
+              />
             </div>
           </div>
         </div>
