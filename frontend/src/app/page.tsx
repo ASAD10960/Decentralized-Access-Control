@@ -17,7 +17,9 @@ import {
   Scale,
   GraduationCap,
   Sparkles,
-  BookOpen
+  BookOpen,
+  Compass,
+  BarChart3
 } from "lucide-react";
 import { api, MedicalRecordItem } from "@/lib/api";
 
@@ -64,28 +66,28 @@ export default function HomePage() {
         {/* Quick Launch Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <Link
-            href="/viva-defense"
+            href="/why-securechain"
             className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-teal-500 via-cyan-400 to-sky-500 hover:from-teal-400 hover:to-cyan-300 text-slate-950 font-extrabold text-sm shadow-glow-teal transition-all hover:scale-105 active:scale-95 ring-2 ring-teal-300/40"
           >
-            <GraduationCap className="w-5 h-5" /> Viva Defense & Architecture
+            <Compass className="w-5 h-5" /> Why SecureChain?
+          </Link>
+          <Link
+            href="/results"
+            className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 border border-emerald-500/40 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
+          >
+            <BarChart3 className="w-4 h-4" /> Results & Outcomes
+          </Link>
+          <Link
+            href="/viva-defense"
+            className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-teal-300 border border-teal-500/40 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
+          >
+            <GraduationCap className="w-4 h-4" /> Viva Defense
           </Link>
           <Link
             href="/keywords"
             className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-500/40 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
           >
-            <BookOpen className="w-4 h-4" /> Keywords & Learner Guide
-          </Link>
-          <Link
-            href="/patient"
-            className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
-          >
-            <User className="w-4 h-4" /> Patient Portal
-          </Link>
-          <Link
-            href="/doctor"
-            className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
-          >
-            <Stethoscope className="w-4 h-4" /> Doctor Portal
+            <BookOpen className="w-4 h-4" /> Keywords Guide
           </Link>
         </div>
       </section>

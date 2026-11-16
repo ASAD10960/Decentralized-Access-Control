@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen } from "lucide-react";
+import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen, Compass, BarChart3 } from "lucide-react";
 import { getSigner } from "@/lib/contracts";
 
 export default function Navbar() {
@@ -54,6 +54,8 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Overview", icon: Activity },
+    { href: "/why-securechain", label: "Why SecureChain?", icon: Compass },
+    { href: "/results", label: "Results & Outcomes", icon: BarChart3 },
     { href: "/patient", label: "Patient Portal", icon: User },
     { href: "/doctor", label: "Doctor Portal", icon: Stethoscope },
     { href: "/admin", label: "Hospital Admin", icon: Building2 },
@@ -85,7 +87,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-cyber-card/60 p-1.5 rounded-xl border border-cyber-border">
+        <nav className="hidden lg:flex items-center gap-1 bg-cyber-card/60 p-1.5 rounded-xl border border-cyber-border">
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href;
@@ -93,13 +95,13 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                   isActive
                     ? "bg-teal-500/20 text-teal-300 border border-teal-500/30 shadow-sm"
                     : "text-slate-300 hover:text-white hover:bg-slate-800/40"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? "text-teal-400" : "text-slate-400"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-teal-400" : "text-slate-400"}`} />
                 {link.label}
               </Link>
             );
