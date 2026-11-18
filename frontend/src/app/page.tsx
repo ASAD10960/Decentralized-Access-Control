@@ -79,6 +79,12 @@ export default function HomePage() {
             <Compass className="w-4 h-4" /> Why SecureChain?
           </Link>
           <Link
+            href="/analytics"
+            className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-teal-950/90 hover:bg-teal-900 text-teal-300 border border-teal-500/50 text-sm font-bold shadow-glow-teal transition-all hover:scale-105 active:scale-95"
+          >
+            <Database className="w-4 h-4 text-teal-400" /> 10K Scalability Dashboard
+          </Link>
+          <Link
             href="/results"
             className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 border border-emerald-500/40 text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
           >
@@ -148,6 +154,46 @@ export default function HomePage() {
             </div>
           );
         })}
+      </section>
+
+      {/* 10,000 Big Data Scalability Banner */}
+      <section className="glass-panel p-6 sm:p-8 rounded-3xl border border-teal-500/40 shadow-glow-teal relative overflow-hidden">
+        <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+          <div className="space-y-2 max-w-2xl">
+            <div className="flex items-center gap-2">
+              <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-mono font-bold border border-teal-500/30">
+                BIG DATA BENCHMARK (N = 10,000)
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-400 text-xs font-semibold border border-emerald-800">
+                100% Deterministic Accuracy
+              </span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Evaluated on 10,000+ Encrypted Clinical Health Records
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Stress-tested across 10,000 medical records representing a municipal hospital network.
+              View real-time latency distributions, 8 clinical departments, 7 imaging modalities, and live batch stress-testing.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/analytics"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
+            >
+              <Database className="w-4 h-4" /> Open 10K Dashboard <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <a
+              href="/healthcare_10k_records.csv"
+              download="healthcare_10k_records.csv"
+              className="px-5 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-300 font-semibold text-xs flex items-center gap-2 transition-all"
+            >
+              <FileCheck2 className="w-4 h-4 text-teal-400" /> Download 10K CSV
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Role Navigation Cards */}

@@ -1,0 +1,40 @@
+{
+  "total_records": 10000,
+  "status_counts": {
+    "GRANTED": 6511,
+    "BLOCKED_UNAUTHORIZED": 2776,
+    "REVOKED_DOCTOR": 453,
+    "EMERGENCY_OVERRIDE": 260
+  },
+  "dept_counts": {
+    "Oncology": 1794,
+    "Neurology": 1486,
+    "Pathology": 780,
+    "Cardiology": 2196,
+    "Radiology": 1459,
+    "Pediatrics": 692,
+    "Orthopedics": 1101,
+    "Emergency": 492
+  },
+  "modality_counts": {
+    "Full 3D Brain MRI Scan": 1537,
+    "64-Slice Cardiac CT Angiography": 1936,
+    "12-Lead Holter Ambulatory ECG": 1560,
+    "Blood Biochemistry & Immunoassay": 1160,
+    "Digital Chest X-Ray": 2521,
+    "Whole-Genome Variant Sequencing": 818,
+    "Clinical Discharge & Surgery Summary": 468
+  },
+  "total_storage_mb": 303202.59999999945,
+  "total_aes_ms": 1009943.8999999985,
+  "total_cpabe_ms": 1940731.8999999976,
+  "total_decryption_ms": 2827798.6000000173,
+  "total_gas": 1176022374,
+  "avg_file_size_mb": 30.32,
+  "avg_aes_ms": 100.99,
+  "avg_cpabe_ms": 194.07,
+  "avg_decryption_ms": 282.78,
+  "avg_gas": 117602,
+  "total_storage_gb": 296.1,
+  "accuracy_percentage": 100.0
+}

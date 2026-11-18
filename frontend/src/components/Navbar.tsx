@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen, Compass, BarChart3, HelpCircle } from "lucide-react";
+import { Shield, Activity, User, Stethoscope, Building2, Wallet, ExternalLink, CheckCircle2, GraduationCap, BookOpen, Compass, BarChart3, HelpCircle, Database } from "lucide-react";
 import { getSigner } from "@/lib/contracts";
 
 export default function Navbar() {
@@ -54,14 +54,15 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Overview", icon: Activity },
-    { href: "/about", label: "About Project", icon: HelpCircle },
-    { href: "/why-securechain", label: "Why SecureChain?", icon: Compass },
-    { href: "/results", label: "Results & Outcomes", icon: BarChart3 },
-    { href: "/patient", label: "Patient Portal", icon: User },
-    { href: "/doctor", label: "Doctor Portal", icon: Stethoscope },
-    { href: "/admin", label: "Hospital Admin", icon: Building2 },
+    { href: "/about", label: "About", icon: HelpCircle },
+    { href: "/analytics", label: "10K Analytics", icon: Database },
+    { href: "/results", label: "Results", icon: BarChart3 },
+    { href: "/why-securechain", label: "Why Us?", icon: Compass },
+    { href: "/patient", label: "Patient", icon: User },
+    { href: "/doctor", label: "Doctor", icon: Stethoscope },
+    { href: "/admin", label: "Admin", icon: Building2 },
     { href: "/viva-defense", label: "Viva Defense", icon: GraduationCap },
-    { href: "/keywords", label: "Keywords Guide", icon: BookOpen },
+    { href: "/keywords", label: "Keywords", icon: BookOpen },
   ];
 
   return (

@@ -135,13 +135,19 @@ export default function ResultsAndOutcomesPage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
+            <Link
+              href="/analytics"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
+            >
+              <Database className="w-4 h-4" /> 10,000 Records Big Data Dashboard
+            </Link>
             <a
               href="/research-paper.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-950 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
+              className="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-teal-300 font-bold text-xs shadow-glow-teal flex items-center gap-2 transition-all hover:scale-105"
             >
-              <FileText className="w-4 h-4" /> View Original Research Paper PDF <ExternalLink className="w-3.5 h-3.5" />
+              <FileText className="w-4 h-4" /> View Research Paper PDF <ExternalLink className="w-3.5 h-3.5" />
             </a>
             <Link
               href="/why-securechain"
