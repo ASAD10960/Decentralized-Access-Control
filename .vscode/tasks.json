@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start SecureChain (Full Stack)",
+      "type": "shell",
+      "command": ".\\start_all.bat",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Frontend Only (Next.js - http://localhost:3000)",
+      "type": "shell",
+      "command": "npm --prefix frontend run dev",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Backend Only (Django - http://127.0.0.1:8000)",
+      "type": "shell",
+      "command": "powershell -Command \"cd backend; .\\venv\\Scripts\\python.exe manage.py runserver 127.0.0.1:8000\"",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Hardhat Node (Ethereum Testnet - http://127.0.0.1:8545)",
+      "type": "shell",
+      "command": "npx --prefix contracts hardhat node",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}

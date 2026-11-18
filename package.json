@@ -1,0 +1,25 @@
+{
+  "name": "decentralized-access-control-workspace",
+  "version": "1.0.0",
+  "description": "SecureChain: Decentralized Access Control for Medical Reports Using Smart Contracts and Attribute-Based Encryption",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "backend": "cd backend && venv\\Scripts\\python.exe manage.py runserver 127.0.0.1:8000",
+    "contracts": "npx --prefix contracts hardhat node",
+    "test:contracts": "npx --prefix contracts hardhat test",
+    "start:all": ".\\start_all.bat"
+  },
+  "keywords": [
+    "blockchain",
+    "cp-abe",
+    "ethereum",
+    "smart-contracts",
+    "healthcare",
+    "decentralized-access-control"
+  ],
+  "author": "ASAD10960",
+  "license": "MIT"
+}

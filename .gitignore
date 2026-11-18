@@ -9,7 +9,8 @@ ehthumbs.db
 desktop.ini
 
 # IDE & Editor Files
-.vscode/
+.vscode/*
+!.vscode/tasks.json
 .idea/
 *.swp
 *.swo
